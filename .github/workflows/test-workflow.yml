@@ -1,0 +1,13 @@
+name: Test workflow that runs on all branches except main.
+on: 
+  push:
+    branches:
+      - '**'
+      - '!main'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Main script
+        run: |
+          cowsay "Only on branches other than main."
