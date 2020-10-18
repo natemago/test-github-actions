@@ -1,0 +1,15 @@
+name: Test workflow that runs only on main branch.
+on: 
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install packages
+        run: sudo apt install cowsay
+      - name: Main script
+        run: |
+          cowsay "Only on  main."
